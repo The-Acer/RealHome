@@ -1,0 +1,433 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('ECO FRIENDLY HOME.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgba(17, 107, 209, 0.7);
+}
+
+/* Header and Navigation */
+header {
+    background-color: rgba(17, 107, 209, 0.7); /* Transparent blue */
+    color: white;
+    padding: 1.5rem; /* Make the nav bar larger */
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out; /* Smooth transition */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Larger font for the logo */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem; /* Increase font size */
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #141413; /* Gold hover effect */
+}
+
+/* Main Content */
+main {
+    padding-top: 8rem; /* Adjust for larger header */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Property Banner */
+.property-banner {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent banner */
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.property-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.property-banner p {
+    font-size: 1.2rem;
+}
+
+/* Property Gallery */
+.property-gallery {
+    margin: 2rem 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Property Details Section */
+.property-details {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent back */
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: rgba(17, 107, 209, 0.7);
+    padding: 1.5rem;
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+main {
+    padding-top: 6rem; /* Leave space for fixed header */
+}
+
+/* Tab Section */
+.property-tabs {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.tab-link {
+    background-color: rgba(17, 107, 209, 0.7);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2rem;
+}
+
+.tab-link:hover {
+    background-color: rgba(17, 107, 209, 0.9);
+}
+
+.tab-link.active {
+    background-color: #0056b3;
+}
+
+.tab-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab-image img {
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.tab-info {
+    max-width: 600px;
+}
+
+.tab-info h2 {
+    color: rgba(17, 107, 209, 0.7);
+}
+
+.tab-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab-info ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(17, 107, 209, 0.7);
+    color: white;
+    margin-top: 2rem;
+}
+
+
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: rgba(17, 107, 209, 0.7);
+    padding: 1.5rem;
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+main {
+    padding-top: 6rem; /* Leave space for fixed header */
+}
+
+/* Tab Section */
+.property-tabs {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.tab-link {
+    background-color: rgba(17, 107, 209, 0.7);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2rem;
+}
+
+.tab-link:hover {
+    background-color: rgba(17, 107, 209, 0.9);
+}
+
+.tab-link.active {
+    background-color: #0056b3;
+}
+
+.tab-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab-image img {
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.tab-info {
+    max-width: 600px;
+}
+
+.tab-info h2 {
+    color: rgba(17, 107, 209, 0.7);
+}
+
+.tab-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab-info ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(17, 107, 209, 0.7);
+    color: white;
+    margin-top: 2rem;
+}
+
+
+
+/* mobile responsiveness*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1 1 45%; /* Adjusts item to take 45% of the width, change for smaller screens */
+    margin: 10px;
+}
+
+@media (max-width: 600px) {
+    .item {
+        flex: 1 1 100%; /* On small screens, make items take full width */
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns based on screen size */
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; /* On small screens, stack items */
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Small devices (mobiles, 600px and below) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .nav-bar {
+        flex-direction: column; /* Make navbar stack vertically */
+    }
+}
+
+/* Medium devices (tablets, 600px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Large devices (desktops, 900px and above) */
+@media (min-width: 901px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+
+
+/* Small screen font sizes */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+.video-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px; /* Adjusted size */
+    height: auto; /* Maintain aspect ratio */
+    overflow: hidden;
+    z-index: 1000;
+    animation: rotate 10s linear infinite; /* Add rotation animation */
+}
+
+.video-logo img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

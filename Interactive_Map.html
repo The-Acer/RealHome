@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Property Map</title>
+    <link rel="stylesheet" href="Interactive_Map.css">
+    
+    <!-- The Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>Property Locations</h1>
+        <nav>
+            <div class="video-logo">
+                <img src="H.jpg" alt="Real Home Logo">
+            </div>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="PropertyListing.html" class="active">Property Listings</a></li>
+                <li><a href="Search_and_filter.html">Search and Filter</a></li>
+                <li><a href="Property_Details.html">Property Details Page</a></li>
+                <li><a href="Interactive_Map.html">Interactive Map</a></li>
+                <li><a href="Agent_Profile.html">Agent Profiles</a></li>
+                <li><a href="Favorites.html">Favorites </a></li>
+                <li><a href="Wishlist.html">Wishlist</a></li>
+                <li><a href="Contact.html">Contact Form</a></li>
+            </ul>
+          
+        </nav>
+    </header>
+
+    <main>
+        <section class="property-tabs">
+      
+
+            <div class="tab-content" id="map-container">
+                <div id="map"></div> <!-- Map container -->
+            </div>
+
+            <div class="tab-content" id="property-details" style="display: none;">
+                <div class="tab-image">
+                    <img id="property-image" src="" alt="Property Image">
+                </div>
+                <div class="tab-info">
+                    <h2 id="property-title"></h2>
+                    <p id="property-description"></p>
+                    <ul id="property-amenities"></ul>
+                    <p><strong>Contact:</strong> <span id="property-contact"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <footer>
+        <p>&copy; 2024 Property Listings. All rights reserved.</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="Interactive_Map.js"></script>
+</body>
+
+
+</html>

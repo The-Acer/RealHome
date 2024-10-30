@@ -1,0 +1,500 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-size: cover; /* Cover the entire background */
+    color: #333;
+    line-height: 1.6;
+}
+body {
+    background-color: #f3f4f6;
+    background-image: url('vecteezy_2d-rendering-of-an-impressive-contemporary-villa-in-exposed_32318334.jpg'); /* Specify the path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling of the image */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(0, 123, 255, 0.5); /* Adjusted to 50% transparency */
+    color: white;
+    padding: 20px 0;
+    position: relative; /* Position relative for absolute elements inside */
+    z-index: 10; /* Ensure it's above the background */
+}
+
+.logo h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    text-align: center;
+    margin-top: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+    position: relative; /* Position for pseudo-element */
+    overflow: hidden; /* Hide overflow for pseudo-element */
+}
+
+nav ul li a {
+    color: white; /* White text color */
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block; /* Make the link a block */
+    padding: 10px 20px; /* Add padding for a larger clickable area */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+}
+
+nav ul li::before {
+    content: ''; /* Create a pseudo-element for the background */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Light overlay color */
+    border-radius: 5px; /* Match the border radius */
+    transform: translate(-50%, -50%) scale(0); /* Scale down for initial state */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+    z-index: 0; /* Behind the link text */
+}
+
+nav ul li:hover a {
+    color: #007bff; /* Change text color on hover */
+}
+
+nav ul li:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+nav ul li a:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); /* Add shadow for depth */
+    transform: translateY(-2px); /* Slight upward movement */
+}
+
+main {
+    padding: 20px;
+    text-align: center; /* Center the title */
+}
+
+.property-listing {
+    padding: 40px 20px; /* Padding around the section */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    margin: 40px auto; /* Centering */
+    max-width: 1200px; /* Max width for the listings */
+}
+
+.property-listing h2 {
+    font-size: 2.5em; /* Title size */
+    margin-bottom: 30px; /* Margin for spacing */
+    color: #007bff; /* Blue color for the title */
+    text-align: center; /* Center the title */
+    font-weight: bold; /* Bold title */
+    text-transform: uppercase; /* Uppercase title for emphasis */
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between items */
+}
+
+.property-item {
+    background-color: #ffffff; /* White background for items */
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow for rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    position: relative; /* Positioning for overlay effects */
+}
+
+.property-image {
+    position: relative; /* Position for overlay */
+}
+
+.property-image img {
+    width: 100%; /* Responsive image */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area */
+    transition: transform 0.3s; /* Transition for image effect */
+}
+
+.property-image:hover img {
+    transform: scale(1.1); /* Zoom in on image on hover */
+}
+
+.overlay {
+    position: absolute; /* Positioning for overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    color: white; /* Text color */
+    display: flex; /* Centering content */
+    flex-direction: column; /* Column layout */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s; /* Transition for opacity */
+}
+
+.property-image:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.property-details {
+    padding: 20px; /* Padding around the details */
+}
+
+.property-item h3 {
+    font-size: 1.7em; /* Title size */
+    margin: 10px 0; /* Margin for spacing */
+    color: #333; /* Dark text for title */
+    font-weight: bold; /* Bold title */
+}
+
+.property-item .price {
+    font-size: 1.5em; /* Price size */
+    color: #28a745; /* Green color for price */
+    margin: 5px 0; /* Margin for spacing */
+    font-weight: bold; /* Bold price */
+}
+
+.property-item .description {
+    font-size: 0.95em; /* Description text size */
+    color: #555; /* Darker text for description */
+    margin-bottom: 15px; /* Margin for spacing */
+}
+
+.property-item button.view-details {
+    padding: 12px 20px; /* Padding for button */
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-weight: bold; /* Bold text for button */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for button */
+}
+
+.property-item button.view-details:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Hover effects for property items */
+.property-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .property-listing h2 {
+        font-size: 2em; /* Smaller title size for mobile */
+    }
+}
+
+
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.rental-listing {
+    padding: 40px 20px; /* Add padding for spacing */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    margin: 40px auto; /* Centering */
+    max-width: 1200px; /* Max width for the listings */
+}
+
+.rental-listing h2 {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below title */
+    font-size: 2em; /* Adjust font size */
+    color: #333; /* Darker color for better contrast */
+}
+
+.property-grid {
+    display: grid; /* Use CSS grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+}
+
+.property-item {
+    background-color: #fff; /* White background for items */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    position: relative; /* Position for overlay */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.property-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deep shadow on hover */
+}
+
+.property-image {
+    position: relative; /* Position for overlay */
+}
+
+.property-image img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.overlay {
+    position: absolute; /* Overlay on top of image */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    color: #fff; /* White text */
+    display: flex; /* Center content */
+    flex-direction: column; /* Column layout */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+.property-image:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.property-details {
+    padding: 15px; /* Space around details */
+}
+
+.property-details .description {
+    margin: 10px 0; /* Space above and below description */
+    font-size: 0.9em; /* Slightly smaller text */
+    color: #666; /* Gray text */
+}
+
+.view-details {
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.view-details:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+.property-image {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    background-image: url('vecteezy_ai-generated-small-white-house-with-metal-roof_40344022.jpeg'); /* Set a default background image */
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* Button Styles */
+button {
+    padding: 10px 20px; /* Add padding for a better look */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 16px; /* Increase font size */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Uppercase text for better readability */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Add Property Button */
+#addPropertyBtn {
+    background: linear-gradient(135deg, #4CAF50, #3e8e41); /* Green gradient */
+    color: white; /* White text */
+    margin-bottom: 20px; /* Space below the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Hover effect for Add Property button */
+#addPropertyBtn:hover {
+    background: linear-gradient(135deg, #45a049, #388e3c); /* Darker green gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Edit Property Button */
+.edit-property {
+    background: linear-gradient(135deg, #2196F3, #1976D2); /* Blue gradient */
+    color: white; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Hover effect for Edit button */
+.edit-property:hover {
+    background: linear-gradient(135deg, #0b7dda, #0a7dc2); /* Darker blue gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Delete Property Button */
+.delete-property {
+    background: linear-gradient(135deg, #f44336, #c62828); /* Red gradient */
+    color: white; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Hover effect for Delete button */
+.delete-property:hover {
+    background: linear-gradient(135deg, #da190b, #b71c1c); /* Darker red gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Form Buttons (Save and Cancel) */
+#saveProperty, #cancelProperty {
+    background: linear-gradient(135deg, #008CBA, #007B9E); /* Blue gradient */
+    color: white; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Hover effect for Save and Cancel buttons */
+#saveProperty:hover, #cancelProperty:hover {
+    background: linear-gradient(135deg, #007B9E, #006b83); /* Darker blue gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Additional Styles for Buttons in Property Item */
+.property-details button {
+    margin-top: 5px; /* Space above the buttons */
+}
+
+
+/* mobile responsiveness*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1 1 45%; /* Adjusts item to take 45% of the width, change for smaller screens */
+    margin: 10px;
+}
+
+@media (max-width: 600px) {
+    .item {
+        flex: 1 1 100%; /* On small screens, make items take full width */
+    }
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns based on screen size */
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; /* On small screens, stack items */
+    }
+}
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+/* Small devices (mobiles, 600px and below) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .nav-bar {
+        flex-direction: column; /* Make navbar stack vertically */
+    }
+}
+
+/* Medium devices (tablets, 600px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Large devices (desktops, 900px and above) */
+@media (min-width: 901px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+
+
+/* Small screen font sizes */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+.video-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px; /* Adjusted size */
+    height: auto; /* Maintain aspect ratio */
+    overflow: hidden;
+    z-index: 1000;
+    animation: rotate 10s linear infinite; /* Add rotation animation */
+}
+
+.video-logo img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+

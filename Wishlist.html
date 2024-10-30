@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="Wishlist.css">
+    <style>
+        /* General Styles */
+        
+    /* Basic Reset and Body Styling */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f3f4f6;
+        background-image: url('vecteezy_house.jpg'); /* Update with your image */
+        background-size: cover;
+        background-position: center;
+        color: #333;
+    }
+
+    /* Favorites & Wishlist Section */
+    #favorites-wishlist {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #222;
+    }
+
+    /* Styling for Each Property Card */
+    .property-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .property-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Property Text */
+    .property-card .property-info {
+        flex: 1;
+        margin-left: 10px;
+        color: #333;
+    }
+
+    /* Remove Button */
+    .remove-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .remove-button:hover {
+        background-color: #c0392b;
+    }
+
+</style>
+
+<div class="video-logo">
+    <img src="H.jpg" alt="Real Home Logo">
+</div>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>Wishlist</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="PropertyListing.html">Property Listings</a></li>
+            <li><a href="Search_and_filter.html">Search and Filter</a></li>
+            <li><a href="Property_Details.html">Property Details Page</a></li>
+            <li><a href="Interactive_Map.html">Interactive Map</a></li>
+            <li><a href="Agent_Profile.html">Agent Profiles</a></li>
+            <li><a href="Favorites.html">Favorites</a></li>
+            <li><a href="Wishlist.html" class="active">Wishlist</a></li>
+            <li><a href="Contact.html">Contact Form</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="favorites-wishlist">
+        <div class="features-container">
+            <h2>💖 Your Wishlist 💖</h2>
+            <p>Save and organize your favorite properties!</p>
+            <input type="text" id="propertyInput" placeholder="Add a property..." />
+            <button onclick="addToWishlist()">Add to Wishlist</button>
+            <div id="favoritesContainer">
+                <!-- Liked properties will be appended here -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2023 Property Hub. All rights reserved.</p>
+</footer>
+
+<script>
+    // Function to add properties to the wishlist
+    function addToWishlist() {
+        const propertyInput = document.getElementById('propertyInput');
+        const propertyName = propertyInput.value.trim();
+
+        if (propertyName) {
+            let likedProperties = JSON.parse(localStorage.getItem('likedProperties')) || [];
+            likedProperties.push(propertyName);
+            localStorage.setItem('likedProperties', JSON.stringify(likedProperties));
+            displayLikedProperties();
+            propertyInput.value = ''; // Clear input field
+        } else {
+            alert("Please enter a property name.");
+        }
+    }
+
+    // Function to display liked properties
+    function displayLikedProperties() {
+        const likedProperties = JSON.parse(localStorage.getItem('likedProperties')) || [];
+        const favoritesContainer = document.getElementById('favoritesContainer');
+
+        favoritesContainer.innerHTML = ''; // Clear previous content
+
+        if (likedProperties.length === 0) {
+            favoritesContainer.innerHTML = '<p>No properties in your wishlist yet.</p>';
+        } else {
+            likedProperties.forEach(property => {
+                const propertyDiv = document.createElement('div');
+                propertyDiv.classList.add('liked-property');
+                propertyDiv.innerText = property;
+
+                const removeButton = document.createElement('button');
+                removeButton.classList.add('remove-button');
+                removeButton.innerText = 'Remove';
+                removeButton.onclick = function () {
+                    removeFromWishlist(property);
+                };
+
+                propertyDiv.appendChild(removeButton);
+                favoritesContainer.appendChild(propertyDiv);
+            });
+        }
+    }
+
+    // Function to remove properties from the wishlist
+    function removeFromWishlist(propertyName) {
+        let likedProperties = JSON.parse(localStorage.getItem('likedProperties')) || [];
+        likedProperties = likedProperties.filter(property => property !== propertyName);
+        localStorage.setItem('likedProperties', JSON.stringify(likedProperties));
+        displayLikedProperties();
+    }
+
+    // Call this function when the page loads
+    window.onload = displayLikedProperties;
+</script>
+
+</body>
+</html>

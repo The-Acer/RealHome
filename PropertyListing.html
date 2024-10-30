@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Property Listings - Real Home Properties</title>
+    <link rel="stylesheet" href="PropertyListing.css"> <!-- Link to external CSS file -->
+    <style>
+        .like-button {
+            background-color: #28a745; /* Green color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .like-button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        .property-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .property-image:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+    <div class="video-logo">
+        <img src="H.jpg" alt="Real Home Logo">
+    </div>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Real Home Properties</h1>
+        </div>
+        <div class="video-logo">
+            <img src="H.jpg" alt="Real Home Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="PropertyListing.html" class="active">Property Listings</a></li>
+                <li><a href="Search_and_filter.html">Search and Filter</a></li>
+                <li><a href="Property_Details.html">Property Details Page</a></li>
+                <li><a href="Interactive_Map.html">Interactive Map</a></li>
+                <li><a href="Agent_Profile.html">Agent Profiles</a></li>
+                <li><a href="Favorites.html">Favorites </a></li>
+                <li><a href="Wishlist.html">Wishlist</a></li>
+                <li><a href="Contact.html">Contact Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="property-listing">
+            <h2>Property Listings</h2>
+            <button id="addPropertyBtn">Add Property</button> <!-- Add Property Button -->
+            <div class="property-grid" id="propertyGrid">
+                <!-- Example Properties -->
+                <div class="property-item" data-id="1">
+                    <div class="property-image">
+                        <img src="vecteezy_a-beautiful-house-with-flowers-in-the-front-yard-ai-generated_32302010.jpg" alt="Beautiful House" />
+                        <div class="overlay">
+                            <h3>Beautiful Family House</h3>
+                            <p class="price">$500,000</p>
+                            <button class="like-button" onclick="likeProperty('Beautiful Family House')">Like</button>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A lovely family home located in a quiet neighborhood.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+
+                <div class="property-item" data-id="2">
+                    <div class="property-image">
+                        <img src="vecteezy_modern-apartment-living-room-with-city-view_48834396.jpeg" alt="Modern Apartment" />
+                        <div class="overlay">
+                            <h3>Modern Apartment</h3>
+                            <p class="price">$600,000</p>
+                            <button class="like-button" onclick="likeProperty('Modern Apartment')">Like</button>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A stylish apartment with great amenities in the city.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+
+                <div class="property-item" data-id="3">
+                    <div class="property-image">
+                        <img src="vecteezy_modern-beach-house-with-ocean-view_48834379.jpeg" alt="Beach House" />
+                        <div class="overlay">
+                            <h3>Beach House</h3>
+                            <p class="price">$1,200,000</p>
+                            <button class="like-button" onclick="likeProperty('Beach House')">Like</button>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A stunning beach house with direct ocean views.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+
+                <div class="property-item" data-id="4">
+                    <div class="property-image">
+                        <img src="LUXURY VILLA.jpeg" alt="Luxury Villa" />
+                        <div class="overlay">
+                            <h3>Luxury Villa</h3>
+                            <p class="price">$3,500,000</p>
+                            <button class="like-button" onclick="likeProperty('Luxury Villa')">Like</button>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A grand villa with a pool and private garden.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+
+                <div class="property-item" data-id="5">
+                    <div class="property-image">
+                        <img src="vecteezy_exterior-front-facade-of-new-modern-american-house-style_34725793.jpg" alt="Suburban Home" />
+                        <div class="overlay">
+                            <h3>Suburban Home</h3>
+                            <p class="price">$450,000</p>
+                            <button class="like-button" onclick="likeProperty('Suburban Home')">Like</button>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A cozy home in a peaceful suburban area.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+
+                <div class="property-item" data-id="6">
+                    <div class="property-image">
+                        <img src="vecteezy_mountain-view-from-cozy-log-cabin-retreat_29622079.jpg" alt="Mountain Retreat" />
+                        <div class="overlay">
+                            <h3>Mountain Retreat</h3>
+                            <p class="price">$900,000</p>
+                            <button class="like-button" onclick="likeProperty('Mountain Retreat')">Like</button>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A peaceful home nestled in the mountains.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+
+                <div class="property-item" data-id="7">
+                    <div class="property-image">
+                        <img src="vecteezy_a-balcony-with-a-swimming-pool-and-sunset-view_22398747.jpg" alt="Penthouse Suite" />
+                        <div class="overlay">
+                            <h3>Penthouse Suite</h3>
+                            <p class="price">$2,500,000</p>
+                            <button class="like-button" onclick="likeProperty('Penthouse Suite')">Like</button>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A luxurious penthouse with city skyline views.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+
+                <div class="property-item" data-id="8">
+                    <div class="property-image">
+                        <img src="vecteezy_ai-generated-small-white-house-with-metal-roof_40344022.jpeg" alt="Country Cottage" />
+                        <div class="overlay">
+                            <h3>Country Cottage</h3>
+                            <p class="price">$350,000</p>
+                            <button class="like-button" onclick="likeProperty('Country Cottage')">Like</button>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A quaint cottage surrounded by nature.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+
+                <div class="property-item" data-id="9">
+                    <div class="property-image">
+                        <img src="vecteezy_a-house-in-the-middle-of-a-lake_47991708.jpeg" alt="Lakefront Cabin" />
+                        <div class="overlay">
+                                <h3>Lakefront Cabin</h3>
+                                <p class="price">$750,000</p>
+                                <button class="like-button" onclick="likeProperty('Lakefront Cabin')">Like</button>
+                            </div>
+                        </div>
+                        <div class="property-details">
+                            <p class="description">A serene cabin with stunning views of the lake.</p>
+                            <button class="edit-property">Edit</button>
+                            <button class="delete-property">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer>
+            <p>&copy; 2024 Real Home. All rights reserved.</p>
+        </footer>
+    
+        <script>
+            function likeProperty(propertyName) {
+                alert('You liked ' + propertyName + '!');
+            }
+    
+            // Add functionality for the Add Property button if needed
+            document.getElementById('addPropertyBtn').addEventListener('click', function() {
+                alert('Add Property feature is not yet implemented.');
+            });
+        </script>
+
+<script>
+    // Function to display liked properties
+    function displayLikedProperties() {
+        const likedProperties = JSON.parse(localStorage.getItem('likedProperties')) || [];
+        const favoritesContainer = document.getElementById('favoritesContainer');
+
+        if (likedProperties.length === 0) {
+            favoritesContainer.innerHTML = '<p>No favorites added yet.</p>';
+        } else {
+            likedProperties.forEach(property => {
+                const propertyDiv = document.createElement('div');
+                propertyDiv.classList.add('liked-property');
+                propertyDiv.innerText = property; // You can customize this to display more details
+                favoritesContainer.appendChild(propertyDiv);
+            });
+        }
+    }
+
+    // Call this function when the page loads
+    window.onload = displayLikedProperties;
+</script>
+<script>
+    function likeProperty(propertyName) {
+        // Get liked properties from local storage or create an empty array
+        let likedProperties = JSON.parse(localStorage.getItem('likedProperties')) || [];
+
+        // Check if the property is already liked
+        if (!likedProperties.includes(propertyName)) {
+            likedProperties.push(propertyName); // Add property to the array
+            localStorage.setItem('likedProperties', JSON.stringify(likedProperties)); // Save it back to local storage
+            alert('You liked ' + propertyName + '!');
+        } else {
+            alert('You already liked ' + propertyName + '!');
+        }
+    }
+
+    // Add functionality for the Add Property button if needed
+    document.getElementById('addPropertyBtn').addEventListener('click', function() {
+        alert('Add Property feature is not yet implemented.');
+    });
+</script>
+
+    </body>
+    
+    </html>
+    

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Real Home Properties</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+   
+
+    <header>
+        <div class="logo">
+            <h1>Real Home Properties </h1>
+        </div>
+    </div>
+    <div class="video-logo">
+        <img src="H.jpg" alt="Real Home Logo">
+    </div>
+        <div class="logo">
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="PropertyListing.html" class="active">Property Listings</a></li>
+                <li><a href="Search_and_filter.html">Search and Filter</a></li>
+                <li><a href="Property_Details.html">Property Details Page</a></li>
+                <li><a href="Interactive_Map.html">Interactive Map</a></li>
+                <li><a href="Agent_Profile.html">Agent Profiles</a></li>
+                <li><a href="Favorites.html">Favorites </a></li>
+                <li><a href="Wishlist.html">Wishlist</a></li>
+                <li><a href="Contact.html">Contact Form</a></li>
+            </ul>
+           
+
+             
+        </nav>
+    </header>
+  
+
+    <main>
+        <section class="welcome-section">
+            <h2>Welcome to Real Home Properties</h2>
+            <p>Your gateway to finding the perfect property. Explore listings, meet agents, and discover your dream home today.</p>
+        </section>
+
+        <section class="features-section">
+            <h3>Explore Our Features</h3>
+            <div class="features-container">
+                <h2>Website Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">&#128100;</div> <!-- User Icon -->
+                        <h3>User Registration and Login</h3>
+                        <p>Secure user accounts for agents and potential buyers/renters.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">&#128196;</div> <!-- Property Icon -->
+                        <h3>Property Listings</h3>
+                        <p>Users can add, edit, or remove property listings.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">&#128269;</div> <!-- Search Icon -->
+                        <h3>Search and Filter</h3>
+                        <p>Search properties by location, price range, property type, and other criteria.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">&#128205;</div> <!-- Details Icon -->
+                        <h3>Property Details Page</h3>
+                        <p>Detailed information about each property, including photos, descriptions, amenities, and contact information.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">&#128506;</div> <!-- Map Icon -->
+                        <h3>Interactive Map</h3>
+                        <p>Integration of an interactive map showing property locations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">&#128215;</div> <!-- Agent Icon -->
+                        <h3>Agent Profiles</h3>
+                        <p>Profiles for real estate agents with their listings and contact information.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">&#128150;</div> <!-- Favorites Icon -->
+                        <h3>Favorites and Wishlist</h3>
+                        <p>Users can save favorite properties and create a wishlist.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">&#128187;</div> <!-- Mobile Icon -->
+                        <h3>Mobile Responsiveness</h3>
+                        <p>Ensure the website is fully responsive for mobile devices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">&#128172;</div> <!-- Contact Icon -->
+                        <h3>Contact Form</h3>
+                        <p>Forms for users to contact agents or property owners directly through the website.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </section>
+    </main>
+    
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login to Real Home</h2>
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="showSignup">Sign Up here</a></p>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sign Up for Real Home</h2>
+            <form id="signupForm" class="signup-form">
+                <div class="input-group">
+                    <label for="newUsername">Username</label>
+                    <input type="text" id="newUsername" placeholder="Choose a username" required>
+                </div>
+                <div class="input-group">
+                    <label for="newEmail">Email</label>
+                    <input type="email" id="newEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="newPassword">Password</label>
+                    <input type="password" id="newPassword" placeholder="Create a password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Welcome Message Modal -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <h2 id="welcomeMessage"></h2>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Real Home. All rights reserved.</p>
+    </footer>
+
+    <script src="Home.js"></script>
+
+    
+</body>
+</html>

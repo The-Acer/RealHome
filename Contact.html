@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="contact.css"> <!-- Link to your CSS file -->
+    <script src="contact.js" defer></script> <!-- Link to your JavaScript file -->
+    <div class="video-logo">
+        <img src="H.jpg" alt="Real Home Logo">
+    </div>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="PropertyListing.html" class="active">Property Listings</a></li>
+                <li><a href="Search_and_filter.html">Search and Filter</a></li>
+                <li><a href="Property_Details.html">Property Details Page</a></li>
+                <li><a href="Interactive_Map.html">Interactive Map</a></li>
+                <li><a href="Agent_Profile.html">Agent Profiles</a></li>
+                <li><a href="Favorites.html">Favorites </a></li>
+                <li><a href="Wishlist.html">Wishlist</a></li>
+                <li><a href="Contact.html">Contact Form</a></li>
+            </ul>
+
+            
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contact an Agent or Property Owner</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Property Listings. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

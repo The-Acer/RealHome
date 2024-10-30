@@ -1,0 +1,306 @@
+/* Reset the margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    background-image: url('ECO FRIENDLY HOME.jpeg'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    margin: 0; /* Ensures the body starts at the top */
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(17, 107, 209, 0.5);
+    padding: 20px;
+    text-align: center;
+    position: sticky; /* Ensures the header stays at the top when scrolling */
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Ensures the header is above other content */
+}
+
+/* Header Text Styling */
+header h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+    flex: 1;
+    padding-top: 0; /* Ensure the main content does not overlap with the header */
+}
+
+/* Agent Profiles Section */
+.agent-profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 50px;
+    justify-content: center;
+}
+
+/* Individual Agent Profile Card */
+.agent-profile {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Agent Profiles Section */
+.agent-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.agent-profile {
+    background-color: rgba(255, 255, 255, 0.9); /* Slight white overlay for contrast */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 250px; /* Fixed width for profiles */
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.agent-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h2, h3 {
+    color: #007bff;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+
+/* Agent Profiles Section */
+.agent-profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 50px;
+    justify-content: center;
+}
+
+/* Individual Agent Profile Card */
+.agent-profile {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px; /* Slightly rounded corners */
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hover Effects */
+.agent-profile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Agent Photo Styling - Rectangular Image */
+.agent-photo {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Control the maximum width of the agent photo */
+    border-radius: 8px; /* Slight rounding for modern feel */
+    margin-bottom: 20px;
+    object-fit: cover; /* Ensures the image scales properly */
+}
+
+/* Agent Name Styling */
+h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Specialization and Contact Info */
+
+
+
+/* Footer Styling */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1 1 45%; /* Adjusts item to take 45% of the width, change for smaller screens */
+    margin: 10px;
+}
+
+@media (max-width: 600px) {
+    .item {
+        flex: 1 1 100%; /* On small screens, make items take full width */
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns based on screen size */
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; /* On small screens, stack items */
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
+/* mobile responsiveness*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1 1 45%; /* Adjusts item to take 45% of the width, change for smaller screens */
+    margin: 10px;
+}
+
+@media (max-width: 600px) {
+    .item {
+        flex: 1 1 100%; /* On small screens, make items take full width */
+    }
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns based on screen size */
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; /* On small screens, stack items */
+    }
+}
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Small devices (mobiles, 600px and below) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .nav-bar {
+        flex-direction: column; /* Make navbar stack vertically */
+    }
+}
+
+
+/* Small screen font sizes */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+.video-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px; /* Adjusted size */
+    height: auto; /* Maintain aspect ratio */
+    overflow: hidden;
+    z-index: 1000;
+    animation: rotate 10s linear infinite; /* Add rotation animation */
+}
+
+.video-logo img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

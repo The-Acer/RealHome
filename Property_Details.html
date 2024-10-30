@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div class="video-logo">
+        <img src="H.jpg" alt="Real Home Logo">
+    </div>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Property Details</title>
+    <link rel="stylesheet" href="Property_Details.css">
+</head>
+<body>
+    <header>
+        <h1>Property Details</h1>
+        <nav>
+
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="PropertyListing.html" class="active">Property Listings</a></li>
+                <li><a href="Search_and_filter.html">Search and Filter</a></li>
+                <li><a href="Property_Details.html">Property Details Page</a></li>
+                <li><a href="Interactive_Map.html">Interactive Map</a></li>
+                <li><a href="Agent_Profile.html">Agent Profiles</a></li>
+                <li><a href="Favorites.html">Favorites </a></li>
+                <li><a href="Wishlist.html">Wishlist</a></li>
+                <li><a href="Contact.html">Contact Form</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    
+
+   
+
+    <main>
+        <!-- Tab Section -->
+        <section class="property-tabs">
+            <div class="tabs">
+                <button class="tab-link active" onclick="showDetails(event, 'villa')">Villa</button>
+                <button class="tab-link" onclick="showDetails(event, 'apartment')">Apartment</button>
+                <button class="tab-link" onclick="showDetails(event, 'house')">House</button>
+                <button class="tab-link" onclick="showDetails(event, 'cottage')">Cottage</button>
+                <button class="tab-link" onclick="showDetails(event, 'townhouse')">Townhouse</button>
+                <button class="tab-link" onclick="showDetails(event, 'condo')">Condo</button>
+            </div>
+
+            <!-- Villa Tab Content -->
+            <div class="tab-content" id="villa">
+                <div class="tab-image">
+                    <img src="LUXURY VILLA.jpeg" alt="Villa">
+                </div>
+                <div class="tab-info">
+                    <h2>Luxury Villa</h2>
+                    <p>This stunning luxury villa is perfect for those seeking a lavish lifestyle. It features four spacious bedrooms, a private pool, and beautifully landscaped gardens, offering the ultimate retreat.</p>
+                    <h3>Amenities</h3>
+                    <ul>
+                        <li>Private Pool</li>
+                        <li>Landscaped Garden</li>
+                        <li>Outdoor Dining Area</li>
+                        <li>Spacious Living and Dining Areas</li>
+                        <li>Fully Equipped Kitchen</li>
+                        <li>24/7 Security</li>
+                    </ul>
+                    <h3>Contact Information</h3>
+                    <p>Email: Daimon.s@gmail.com</p>
+                    <p>Phone: +1-212-456-7890</p>
+                </div>
+            </div>
+
+            <!-- Apartment Tab Content -->
+            <div class="tab-content" id="apartment" style="display:none;">
+                <div class="tab-image">
+                    <img src="vecteezy_apartment.jpeg" alt="Apartment">
+                </div>
+                <div class="tab-info">
+                    <h2>Modern Apartment</h2>
+                    <p>Located in the heart of downtown, this modern 2-bedroom apartment offers a perfect blend of comfort and style. It features large windows with breathtaking city views, contemporary furnishings, and high-end appliances.</p>
+                    <h3>Amenities</h3>
+                    <ul>
+                        <li>City View</li>
+                        <li>Gym and Fitness Center</li>
+                        <li>Rooftop Terrace</li>
+                        <li>Secure Entry</li>
+                        <li>High-speed Internet</li>
+                    </ul>
+                    <h3>Contact Information</h3>
+                    <p>Email: ZoeFelix@gmail.com</p>
+                    <p>Phone: +1-134-456-1250</p>
+                </div>
+            </div>
+
+            <!-- House Tab Content -->
+            <div class="tab-content" id="house" style="display:none;">
+                <div class="tab-image">
+                    <img src="vecteezy_house.jpg" alt="House">
+                </div>
+                <div class="tab-info">
+                    <h2>Family House</h2>
+                    <p>This charming 3-bedroom family house is located in a friendly neighborhood with excellent schools. It features a large backyard, a spacious kitchen, and cozy living areas.</p>
+                    <h3>Amenities</h3>
+                    <ul>
+                        <li>Large Backyard with Playground</li>
+                        <li>Attached Garage</li>
+                        <li>Fireplace</li>
+                        <li>Energy-efficient Appliances</li>
+                        <li>Close to Parks and Recreation</li>
+                    </ul>
+                    <h3>Contact Information</h3>
+                    <p>Email: ZoeFelix@gmail.com</p>
+                    <p>Phone: +1-330-456-1000</p>
+                </div>
+            </div>
+
+            <!-- Cottage Tab Content -->
+            <div class="tab-content" id="cottage" style="display:none;">
+                <div class="tab-image">
+                    <img src="vecteezy_cottage.jpg" alt="Cottage">
+                </div>
+                <div class="tab-info">
+                    <h2>Cozy Cottage</h2>
+                    <p>This delightful 2-bedroom cottage is nestled in the countryside, providing a serene escape from the city. It features rustic decor, a warm fireplace, and stunning views of the surrounding landscape.</p>
+                    <h3>Amenities</h3>
+                    <ul>
+                        <li>Wood-burning Stove</li>
+                        <li>Private Patio with Garden</li>
+                        <li>Scenic Views</li>
+                        <li>Pet-friendly</li>
+                        <li>Walking Trails Nearby</li>
+                    </ul>
+                    <h3>Contact Information</h3>
+                    <p>Email: Daimon.s@gmail.com</p>
+                    <p>Phone: +1-212-312-5110</p>
+                </div>
+            </div>
+
+            <!-- Townhouse Tab Content -->
+            <div class="tab-content" id="townhouse" style="display:none;">
+                <div class="tab-image">
+                    <img src="vecteezy_town house.jpeg" alt="Townhouse">
+                </div>
+                <div class="tab-info">
+                    <h2>Spacious Townhouse</h2>
+                    <p>This beautiful 3-story townhouse features modern design, ample space, and a private rooftop terrace perfect for entertaining guests or enjoying sunsets.</p>
+                    <h3>Amenities</h3>
+                    <ul>
+                        <li>Rooftop Terrace with BBQ Area</li>
+                        <li>Home Office</li>
+                        <li>Private Parking</li>
+                        <li>24/7 Security</li>
+                        <li>Close to Public Transport</li>
+                    </ul>
+                    <h3>Contact Information</h3>
+                    <p>Email: GabriellaSmith@gmail.com</p>
+                    <p>Phone: +1-789-741-2200/p>
+                </div>
+            </div>
+
+            <!-- Condo Tab Content -->
+            <div class="tab-content" id="condo" style="display:none;">
+                <div class="tab-image">
+                    <img src="vecteezy_condo.jpg" alt="Condo">
+                </div>
+                <div class="tab-info">
+                    <h2>Luxury Condo</h2>
+                    <p>This stunning 1-bedroom condo offers the ultimate in modern city living, with panoramic views, sleek design, and top-tier amenities.</p>
+                    <h3>Amenities</h3>
+                    <ul>
+                        <li>Infinity Pool</li>
+                        <li>Concierge Service</li>
+                        <li>Fitness Center</li>
+                        <li>High-speed Elevator</li>
+                        <li>Community Lounge</li>
+                    </ul>
+                    <h3>Contact Information</h3>
+                    <p>Email: SimonDube@gmail.com</p>
+                    <p>Phone: +1-112-389-2689</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Property Listings. All rights reserved.</p>
+    </footer>
+
+    <script src="Property_Details.js"></script>
+</body>
+</html>

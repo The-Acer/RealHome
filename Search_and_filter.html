@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings - Real Home</title>
+    <link rel="stylesheet" href="PropertyListing.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Additional styles for background images */
+        .property-item {
+            position: relative;
+            width: 300px; /* Adjust width as needed */
+            margin: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            color: white; /* Text color for better contrast */
+        }
+
+        .property-image {
+            height: 200px; /* Set a fixed height for the image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+            padding: 10px;
+            text-align: center;
+        }
+
+        .property-grid {
+    display: flex; /* Use Flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Space items evenly */
+    gap: 20px; /* Space between property items */
+    margin-top: 20px; /* Space above the grid */
+}
+
+.property-item {
+    flex: 1 1 calc(25% - 20px); /* Each property takes up 25% of the width minus the gap */
+    box-sizing: border-box; /* Include padding in width */
+    margin-bottom: 20px; /* Space below each property */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    color: white; /* Text color */
+    background-color: #444; /* Background color */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.property-item:hover {
+    transform: scale(1.02); /* Scale up on hover */
+}
+
+.property-image {
+    height: 200px; /* Fixed height for images */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    padding: 10px;
+    text-align: center; /* Center the overlay text */
+}
+
+
+
+    .property-item {
+        position: relative;
+        width: 300px;
+        margin: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+        color: white;
+        background-color: #444;
+        transition: transform 0.3s;
+    }
+
+    .property-item:hover {
+        transform: scale(1.02);
+    }
+
+    .property-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        background-image: url('vecteezy_a-house-in-the-middle-of-a-lake_47991708.jpeg'); /* Default image */
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        text-align: center;
+    }
+
+    .property-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    #propertyForm {
+        display: none;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    .video-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px; /* Adjusted size */
+    height: auto; /* Maintain aspect ratio */
+    overflow: hidden;
+    z-index: 1000;
+    animation: rotate 10s linear infinite; /* Add rotation animation */
+}
+
+.video-logo img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+    </style>
+    <div class="video-logo">
+        <img src="H.jpg" alt="Real Home Logo">
+    </div>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Real Home Properties</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="PropertyListing.html" class="active">Property Listings</a></li>
+                <li><a href="Search_and_filter.html">Search and Filter</a></li>
+                <li><a href="Property_Details.html">Property Details Page</a></li>
+                <li><a href="Interactive_Map.html">Interactive Map</a></li>
+                <li><a href="Agent_Profile.html">Agent Profiles</a></li>
+                <li><a href="Favorites.html">Favorites </a></li>
+                <li><a href="Wishlist.html">Wishlist</a></li>
+                <li><a href="Contact.html">Contact Form</a></li>
+            </ul>
+              <!--Mobile responsiveness-->
+           
+        </nav>
+    </header>
+    
+
+    <main>
+        <div class="property-listing">
+            <h2>Property Listings</h2>
+            <button id="addPropertyBtn">Add Property</button> <!-- Add Property Button -->
+            <div class="search-filter">
+                <h2>Search and Filter Properties</h2>
+                <form id="searchForm">
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" placeholder="Enter location">
+                    </div>
+                    <div class="form-group">
+                        <label for="minPrice">Min Price:</label>
+                        <input type="number" id="minPrice" placeholder="Minimum price">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxPrice">Max Price:</label>
+                        <input type="number" id="maxPrice" placeholder="Maximum price">
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyType">Property Type:</label>
+                        <select id="propertyType">
+                            <option value="">Select type</option>
+                            <option value="house">House</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="cottage">Cottage</option>
+                            <option value="villa">Villa</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="condo">Condo</option>
+                        </select>
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="property-grid" id="propertyGrid">
+                <!-- Example Properties are hardcoded here -->
+                <div class="property-item" data-id="1" data-location="New York" data-price="500000" data-type="house">
+                    <div class="property-image" style="background-image: url('vecteezy_a-beautiful-house-with-flowers-in-the-front-yard-ai-generated_32302010.jpg');">
+                        <div class="overlay">
+                            <h3>Beautiful Family House</h3>
+                            <p class="price">$500,000</p>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A lovely family home located in a quiet neighborhood.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+                <div class="property-item" data-id="2" data-location="Los Angeles" data-price="350000" data-type="apartment">
+                    <div class="property-image" style="background-image: url('vecteezy_modern-apartment-living-room-with-city-view_48834396 copy.jpeg');">
+                        <div class="overlay">
+                            <h3>Modern Apartment</h3>
+                            <p class="price">$350,000</p>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A stylish apartment with city views and modern amenities.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+                <div class="property-item" data-id="3" data-location="San Francisco" data-price="275000" data-type="cottage">
+                    <div class="property-image" style="background-image: url('vecteezy_mountain-view-from-cozy-log-cabin-retreat_29622079 copy.jpg');">
+                        <div class="overlay">
+                            <h3>Cozy Cottage</h3>
+                            <p class="price">$275,000</p>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">A charming cottage perfect for a weekend getaway.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+                <div class="property-item" data-id="4" data-location="Miami" data-price="1200000" data-type="villa">
+                    <div class="property-image" style="background-image: url('vecteezy_a-balcony-with-a-swimming-pool-and-sunset-view_22398747.jpg');">
+                        <div class="overlay">
+                            <h3>Luxury Villa</h3>
+                            <p class="price">$1,200,000</p>
+                        </div>
+                    </div>
+                    <div class="property-details">
+                        <p class="description">An exquisite villa with private pool and landscaped garden.</p>
+                        <button class="edit-property">Edit</button>
+                        <button class="delete-property">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form to Add/Edit Property (Hidden by Default) -->
+        <div id="propertyForm" style="display:none;">
+            <h3 id="formTitle">Add Property</h3>
+            <label for="propertyTitle">Title:</label>
+            <input type="text" id="propertyTitle" placeholder="Enter Property Title">
+            <label for="propertyPrice">Price:</label>
+            <input type="text" id="propertyPrice" placeholder="Enter Property Price">
+            <label for="propertyDescription">Description:</label>
+            <input type="text" id="propertyDescription" placeholder="Enter Property Description">
+            <button id="saveProperty">Save</button>
+            <button id="cancelProperty">Cancel</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Real Home. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let editingId = null;
+
+        // Background image mapping based on keywords in the description
+        const backgroundImages = {
+            "family": "url('family-house.jpg')",
+            "modern": "url('modern-apartment.jpg')",
+            "charming": "url('charming-cottage.jpg')",
+            "luxury": "url('luxury-villa.jpg')",
+            "stylish": "url('stylish-apartment.jpg')",
+            "cozy": "url('cozy-cottage.jpg')",
+            "exquisite": "url('exquisite-villa.jpg')",
+            // Add more mappings as needed
+        };
+
+        // Show Add/Edit Form
+        const showPropertyForm = (title = '', price = '', description = '', id = null) => {
+            document.getElementById('propertyTitle').value = title;
+            document.getElementById('propertyPrice').value = price;
+            document.getElementById('propertyDescription').value = description;
+            editingId = id;
+            document.getElementById('propertyForm').style.display = 'block';
+        };
+
+        // Add Property Button
+        document.getElementById('addPropertyBtn').addEventListener('click', () => {
+            showPropertyForm();
+            document.getElementById('formTitle').innerText = 'Add Property';
+        });
+
+        // Save Property
+        document.getElementById('saveProperty').addEventListener('click', () => {
+            const title = document.getElementById('propertyTitle').value;
+            const price = document.getElementById('propertyPrice').value;
+            const description = document.getElementById('propertyDescription').value;
+
+            let backgroundImage = "url('property-placeholder.jpg')"; // Default image
+            for (const keyword in backgroundImages) {
+                if (description.toLowerCase().includes(keyword)) {
+                    backgroundImage = backgroundImages[keyword];
+                    break;
+                }
+            }
+
+            if (editingId) {
+                // Edit Existing Property
+                const property = document.querySelector(`.property-item[data-id="${editingId}"]`);
+                property.querySelector('h3').innerText = title;
+                property.querySelector('.price').innerText = price;
+                property.querySelector('.description').innerText = description;
+                property.querySelector('.property-image').style.backgroundImage = backgroundImage; // Update image
+            } else {
+                // Add New Property
+                const propertyGrid = document.getElementById('propertyGrid');
+                const newId = Date.now(); // Generate a unique ID based on timestamp
+                const newProperty = `
+                    <div class="property-item" data-id="${newId}" data-location="New Location" data-price="${price}" data-type="house">
+                        <div class="property-image" style="background-image: ${backgroundImage};">
+                            <div class="overlay">
+                                <h3>${title}</h3>
+                                <p class="price">${price}</p>
+                            </div>
+                        </div>
+                        <div class="property-details">
+                            <p class="description">${description}</p>
+                            <button class="edit-property">Edit</button>
+                            <button class="delete-property">Delete</button>
+                        </div>
+                    </div>`;
+                propertyGrid.insertAdjacentHTML('beforeend', newProperty);
+            }
+
+            // Hide Form
+            document.getElementById('propertyForm').style.display = 'none';
+            editingId = null;
+        });
+
+        // Cancel Button
+        document.getElementById('cancelProperty').addEventListener('click', () => {
+            document.getElementById('propertyForm').style.display = 'none';
+            editingId = null;
+        });
+
+        // Delete and Edit Buttons (using event delegation)
+        document.getElementById('propertyGrid').addEventListener('click', (e) => {
+            const propertyItem = e.target.closest('.property-item');
+            const propertyId = propertyItem.getAttribute('data-id');
+
+            if (e.target.classList.contains('delete-property')) {
+                // Delete Property
+                propertyItem.remove();
+            } else if (e.target.classList.contains('edit-property')) {
+                // Edit Property
+                const title = propertyItem.querySelector('h3').innerText;
+                const price = propertyItem.querySelector('.price').innerText;
+                const description = propertyItem.querySelector('.description').innerText;
+                showPropertyForm(title, price, description, propertyId);
+                document.getElementById('formTitle').innerText = 'Edit Property';
+            }
+        });
+
+        // Search and Filter Functionality
+        document.getElementById('searchForm').addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent form submission
+
+            // Get search values
+            const location = document.getElementById('location').value.toLowerCase();
+            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+            const propertyType = document.getElementById('propertyType').value;
+
+            // Get all property items
+            const propertyItems = document.querySelectorAll('.property-item');
+
+            // Filter properties based on search criteria
+            propertyItems.forEach(item => {
+                const itemLocation = item.getAttribute('data-location').toLowerCase();
+                const itemPrice = parseFloat(item.getAttribute('data-price'));
+                const itemType = item.getAttribute('data-type');
+
+                // Check if the property matches the search criteria
+                const matchesLocation = location === '' || itemLocation.includes(location);
+                const matchesPrice = itemPrice >= minPrice && itemPrice <= maxPrice;
+                const matchesType = propertyType === '' || itemType === propertyType;
+
+                // Show or hide property item based on matches
+                if (matchesLocation && matchesPrice && matchesType) {
+                    item.style.display = 'block'; // Show property
+                } else {
+                    item.style.display = 'none'; // Hide property
+                }
+            });
+        });
+        property.querySelector('.property-image').style.backgroundImage = backgroundImage; // Update image
+
+    </script>
+    
+
+
+
+
+    
+</body>
+
+</html>
+
