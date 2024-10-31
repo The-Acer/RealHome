@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Buy Property - Real Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Buy.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Real Home Properties</h1>
+        </div>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="PropertyListing.html" class="active">Property Listings</a></li>
+            <li><a href="Search_and_filter.html">Search and Filter</a></li>
+            <li><a href="Property_Details.html">Property Details Page</a></li>
+            <li><a href="Interactive_Map.html">Interactive Map</a></li>
+            <li><a href="Buy.html"> Buy</a></li>
+            <li><a href="Agent_Profile.html">Agent Profiles</a></li>
+            <li><a href="Favorites.html">Favorites </a></li>
+            <li><a href="Wishlist.html">Wishlist</a></li>
+            <li><a href="Contact.html">Contact Form</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <h2>Buy Property</h2>
+            <p>Please fill out your details to proceed with purchasing this property.</p>
+
+            <form id="buyForm" action="#" method="POST" class="mt-4">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="property">Property Name</label>
+                    <input type="text" id="property" name="property" class="form-control" placeholder="Enter the property name" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            <div id="confirmationMessage" class="mt-4" style="display: none;">
+                <h4>Thank you for your interest!</h4>
+                <p>We have received your details and will get in touch with you soon to proceed with the purchase.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Real Home. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle form submission and display the confirmation message
+        document.getElementById("buyForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents form from reloading the page
+            document.getElementById("buyForm").style.display = "none"; // Hide the form
+            document.getElementById("confirmationMessage").style.display = "block"; // Show the confirmation message
+        });
+    </script>
+</body>
+</html>
